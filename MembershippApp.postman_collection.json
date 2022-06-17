@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "1895aeea-82e6-4ad2-af40-60fabdef9273",
+		"name": "MembershippApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19475569"
+	},
+	"item": [
+		{
+			"name": "Get JWT Token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"followAuthorizationHeader": false,
+				"removeRefererHeaderOnRedirect": false,
+				"disableCookies": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n        \"email\": \"sherwin@user.com\",\r\n        \"password\": \"12345678\"        \r\n  }"
+				},
+				"url": {
+					"raw": "localhost:8080/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List All Users (Admin Only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzA2MTksImV4cCI6MTY1NTUxNzAxOX0.bVDqSN4ja1dwiup5W3sWYYV1KFeFSt2MGHyBqMTxJI5x78CUtdheFYerLDCcjXlIAX3CwY_4937PnODe3-1plg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/list_users",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"list_users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Profile (All Roles)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzA2MTksImV4cCI6MTY1NTUxNzAxOX0.bVDqSN4ja1dwiup5W3sWYYV1KFeFSt2MGHyBqMTxJI5x78CUtdheFYerLDCcjXlIAX3CwY_4937PnODe3-1plg",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/view_profile/?id=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"view_profile",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register A User (Admin Only)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"colin@user.com\",\r\n    \"password\": \"12345678\",\r\n    \"firstName\": \"Colin\",\r\n    \"lastName\": \"Pert\",\r\n    \"level\": \"5\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/register_user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"register_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User (Admin and Editor)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 23,\r\n    \"email\": \"yam123@user.com\",\r\n    \"password\": \"12345678\",\r\n    \"firstName\": \"Yam\",\r\n    \"lastName\": \"Bale\",\r\n    \"level\": \"3\",\r\n    \"enabled\": \"true\",\r\n    \"roles\": [\r\n        {\r\n            \"id\": 1,\r\n            \"name\": \"ROLE_USER\"\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"name\": \"ROLE_ADMIN\"\r\n        }\r\n    ]    \r\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/update_user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"update_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User By ID (Admin Only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/delete_user_by_id?id=24",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"delete_user_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "24"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User By Email (Admin Only)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/api/delete_user_by_email?email=marie123@user.com",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"delete_user_by_email"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "marie123@user.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

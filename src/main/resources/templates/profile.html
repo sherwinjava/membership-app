@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Membership Home</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container text-center">
+      <div class=" container text-center">
+			<h1>User Profile</h1>		
+		</div>
+        <form th:action="@{/}" th:object="${user}"
+            method="get" style="max-width: 600px; margin: 0 auto;">
+            
+        <div class="m-3">
+           <div class="form-group row">
+                <label class="col-4 col-form-label">E-mail: </label>
+                <div class="col-8">
+                    <input type="email" th:field="*{email}" class="form-control" required />
+                </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Password: </label>
+                <div class="col-8">
+                    <input type="password" th:field="*{password}" class="form-control"
+                            minlength="6" maxlength="10"/>
+                </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">First Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{firstName}" class="form-control"
+                            required minlength="2" maxlength="20"/>
+                </div>
+            </div>
+             
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Last Name: </label>
+                <div class="col-8">
+                    <input type="text" th:field="*{lastName}" class="form-control"
+                            required minlength="2" maxlength="20" />
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Level</label>
+                <div class="col-8">
+                     <input type="text" th:field="*{level}" class="form-control"
+                            required minlength="2" maxlength="20" />                 
+                </div>
+            </div>
+            
+            <div class="form-group row">
+                <label class="col-4 col-form-label">Assigned Roles</label>
+                <div class="col-8">
+                    <th:block th:each="role :${listRoles}">
+                    <input type="checkbox" th:field="*{roles}"
+                    	th:value="${role.id}"
+                    	th:text="${role.name}" class="m-2"/>
+                    </th:block>
+                </div>
+            </div>
+            
+             
+            <div>
+                <button type="submit" class="btn btn-primary">Back to Home</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    
+   <!--  <div sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR')" class=" container text-center">
+			<br>
+			<hr>
+			<br>
+			<h1>What would you like to do?</h1>
+			<br>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR')"> <a th:href="@{/list_users}">List All Users</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <a th:href="@{/register}">Register A User</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR')"> <a th:href="@{/updateUser}">Update A User</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <a th:href="@{/deleteUser}">Delete A User</a> </h3>
+
+		</div> -->
+</body>
+</html>

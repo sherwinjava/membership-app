@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Login Failed to Membership App</title>
+</head>
+<body>
+<h1>Sorry you failed to login!</h1>
+<form th:action="@{/logout}" method="post">
+<input type="submit" value="Back to Login" />
+ </form>
+
+</body>
+</html>

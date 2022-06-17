@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:sec="http://www.thymeleaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Access Denied</title>
+</head>
+<body>
+	<h2>Sorry, you don't have permission to access this page!</h2>
+	<br>
+    <hr>
+    <br> 
+	<div sec:authorize="isAuthenticated()">
+    	<form th:action="@{/}" method="get">
+       		<input type="submit" value="Back to Home" />    		
+    	</form>
+    </div>
+</body>
+</html>

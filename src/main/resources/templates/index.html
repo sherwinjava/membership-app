@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeLeaf-extras-springsecurity5">
+<head>
+<meta charset="ISO-8859-1">
+<title>Membership Home</title>
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+<script type="text/javascript" src="/webjars/popper.js"></script>
+<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+<script type="text/javascript"
+	src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div sec:authorize="isAnonymous()" class="container text-center">
+		<br>
+		<br>
+		<h1> <a th:href="@{/login}">Click: Login to Membership Homepage</a></h1>
+	</div>	
+
+	<div sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR','ROLE_USER')" class=" container text-center">
+			<br>
+			<br>	
+			<h1>Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>!</h1>
+			<h3><span sec:authentication="principal.authorities">Roles</span></h3>
+			<br>
+			<hr>
+			<br>
+			<h3> <a th:href="@{/showProfile}">View My Profile</a></h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR')"> <a th:href="@{/listUsers}">List All Users</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <a th:href="@{/register}">Register A User</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN','ROLE_EDITOR')"> <a th:href="@{/updateUser}">Update A User</a> </h3>
+			<h3 sec:authorize="hasAnyAuthority('ROLE_ADMIN')"> <a th:href="@{/deleteUser}">Delete A User</a> </h3>
+			<br>
+			
+			<form th:action="@{/logout}" method="post">
+       		<input type="submit" value="Logout" />
+    		</form>
+			
+		</div>
+</body>
+</html>
