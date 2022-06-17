@@ -56,7 +56,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzA2MTksImV4cCI6MTY1NTUxNzAxOX0.bVDqSN4ja1dwiup5W3sWYYV1KFeFSt2MGHyBqMTxJI5x78CUtdheFYerLDCcjXlIAX3CwY_4937PnODe3-1plg",
+						"value": "Bearer <access token>",
 						"type": "text"
 					}
 				],
@@ -81,7 +81,7 @@
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzA2MTksImV4cCI6MTY1NTUxNzAxOX0.bVDqSN4ja1dwiup5W3sWYYV1KFeFSt2MGHyBqMTxJI5x78CUtdheFYerLDCcjXlIAX3CwY_4937PnODe3-1plg",
+						"value": "Bearer <access token>",
 						"type": "text"
 					},
 					{
@@ -123,7 +123,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"value": "Bearer <access token>",
 						"type": "text"
 					}
 				],
@@ -162,7 +162,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"value": "Bearer <access token>",
 						"type": "text"
 					}
 				],
@@ -196,7 +196,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"value": "Bearer <access token>",
 						"type": "text"
 					}
 				],
@@ -232,7 +232,7 @@
 					},
 					{
 						"key": "Authorization",
-						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxLHNoZXJ3aW5AdXNlci5jb20iLCJyb2xlcyI6IltST0xFX0FETUlOLCBST0xFX1VTRVJdIiwiaXNzIjoiQ29kZUphdmEiLCJpYXQiOjE2NTU0MzEwODgsImV4cCI6MTY1NTUxNzQ4OH0.IOXxgx652JzlSd_SRqEkSn_TAsU3ljl2Vh718hOaDnCAzfseRP-rnHtzIo3l2lhXCcIuZp5E3cmE5eSoryPMMA",
+						"value": "Bearer <access token>",
 						"type": "text"
 					}
 				],
